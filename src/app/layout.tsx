@@ -5,8 +5,8 @@ import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Your Name | Portfolio",
-  description: "Frontend Developer & UI Engineer — building fast, accessible, and delightful web experiences.",
+  title: "Chris | Portfolio",
+  description: "2nd Year IT Student & Developer — building web and desktop applications.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -15,15 +15,41 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center overflow-hidden relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/8 via-transparent to-accent-2/8 pointer-events-none" />
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.05]"
-        style={{
-          backgroundImage: "radial-gradient(circle at 50% 50%, var(--color-accent) 0%, transparent 70%)",
-          backgroundSize: "60% 60%",
-          backgroundPosition: "center",
-        }}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+      {/* Mesh gradient blobs */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-accent/20 via-accent/5 to-transparent blur-3xl animate-blob" />
+        <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-accent-2/15 via-accent-2/5 to-transparent blur-3xl animate-blob-2" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-accent/5 via-purple-500/5 to-accent-2/5 blur-3xl animate-blob-3" />
+      </div>
+
+      {/* Grid overlay */}
+      <div className="absolute inset-0 bg-grid opacity-60" />
+
+      {/* Subtle radial glow center */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-b from-accent/8 to-transparent blur-[100px] rounded-full" />
+
+      {/* Floating decorative orbs */}
+      <motion.div
+        className="absolute top-32 left-[15%] w-2 h-2 rounded-full bg-accent-light/40 shadow-lg shadow-accent/20"
+        animate={{ y: [0, -20, 0], opacity: [0.3, 0.8, 0.3] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-40 right-[20%] w-3 h-3 rounded-full bg-accent-2-light/30 shadow-lg shadow-accent-2/20"
+        animate={{ y: [0, 15, 0], opacity: [0.2, 0.6, 0.2] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+      <motion.div
+        className="absolute top-1/3 right-[12%] w-1.5 h-1.5 rounded-full bg-accent/30"
+        animate={{ y: [0, -12, 0], opacity: [0.2, 0.7, 0.2] }}
+        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+      />
+      <motion.div
+        className="absolute bottom-1/4 left-[10%] w-4 h-4 rounded-full bg-accent/10 blur-sm"
+        animate={{ y: [0, 18, 0], scale: [1, 1.2, 1] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">

@@ -16,9 +16,28 @@ export function Navbar() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const sections = links.map((l) => document.getElementById(l.href.slice(1)));
+      const scrollY = window.scrollY + 120;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = sections[i];
+        if (el && el.offsetTop <= scrollY) {
+          setActive(links[i].href);
+          return;
+        }
+      }
+      setActive("");
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -38,7 +57,7 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <div className={`border-b transition-all duration-300 ${scrolled ? "bg-surface/90 backdrop-blur-xl border-border" : "bg-transparent border-transparent"}`}>
+      <div className={`transition-all duration-300 ${scrolled ? "glass-strong" : "bg-transparent"}`}>
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <a href="#" className="text-lg font-bold text-primary tracking-tight">
             <span className="text-accent">.</span>portfolio
@@ -49,7 +68,11 @@ export function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-text-muted hover:text-accent transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  active === l.href
+                    ? "text-accent"
+                    : "text-text-muted hover:text-accent"
+                }`}
               >
                 {l.label}
               </a>
@@ -57,7 +80,7 @@ export function Navbar() {
             <motion.button
               onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
               whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-lg hover:bg-surface-alt transition-colors"
+              className="p-2 rounded-lg hover:bg-surface-alt/50 transition-colors"
               aria-label="Toggle theme"
             >
               {currentTheme === "dark"
@@ -71,7 +94,7 @@ export function Navbar() {
             <motion.button
               onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
               whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-lg hover:bg-surface-alt transition-colors"
+              className="p-2 rounded-lg hover:bg-surface-alt/50 transition-colors"
               aria-label="Toggle theme"
             >
               {currentTheme === "dark"
@@ -82,7 +105,7 @@ export function Navbar() {
             <motion.button
               onClick={() => setOpen(!open)}
               whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-lg hover:bg-surface-alt transition-colors"
+              className="p-2 rounded-lg hover:bg-surface-alt/50 transition-colors"
               aria-label="Toggle menu"
             >
               {open ? <X className="w-5 h-5 text-text" /> : <Menu className="w-5 h-5 text-text" />}
@@ -95,7 +118,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-b border-border bg-surface/95 backdrop-blur-xl"
+            className="md:hidden glass-strong"
           >
             <div className="px-4 py-4 flex flex-col gap-3">
               {links.map((l) => (
@@ -103,7 +126,11 @@ export function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-sm font-medium text-text-muted hover:text-accent transition-colors py-1"
+                  className={`text-sm font-medium transition-colors py-1 ${
+                    active === l.href
+                      ? "text-accent"
+                      : "text-text-muted hover:text-accent"
+                  }`}
                 >
                   {l.label}
                 </a>

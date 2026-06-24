@@ -18,13 +18,16 @@ export function ExperienceSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="experience" className="py-24 px-4 bg-surface-alt/50">
+    <section id="experience" className="relative py-24 px-4 overflow-hidden">
+      <div className="absolute inset-0 bg-dot opacity-30" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-b from-accent/3 to-transparent rounded-full blur-3xl" />
+
       <motion.div
         ref={ref}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={stagger}
-        className="max-w-4xl mx-auto"
+        className="relative z-10 max-w-4xl mx-auto"
       >
         <motion.span
           variants={fadeUp}
@@ -40,7 +43,7 @@ export function ExperienceSection() {
         </motion.h2>
 
         <div className="relative">
-          <div className="absolute left-[19px] top-2 bottom-2 w-px bg-border hidden md:block" />
+          <div className="absolute left-[19px] top-2 bottom-2 w-px bg-gradient-to-b from-accent/40 via-accent/20 to-transparent hidden md:block" />
 
           <div className="space-y-10">
             {experience.jobs.map((job, i) => (
@@ -49,9 +52,11 @@ export function ExperienceSection() {
                 variants={fadeUp}
                 className="relative md:pl-14"
               >
-                <div className="hidden md:block absolute left-[11px] top-1.5 w-[17px] h-[17px] rounded-full border-2 border-accent bg-surface z-10" />
+                <div className="hidden md:flex absolute left-[11px] top-1.5 w-[17px] h-[17px] rounded-full border-2 border-accent bg-surface z-10 items-center justify-center shadow-sm shadow-accent/20">
+                  <div className="w-[5px] h-[5px] rounded-full bg-accent" />
+                </div>
 
-                <div className="p-5 rounded-xl border border-border bg-card hover:shadow-md transition-shadow">
+                <div className="glass rounded-xl p-5 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 mb-3">
                     <div>
                       <h3 className="font-bold text-primary font-heading">{job.role}</h3>

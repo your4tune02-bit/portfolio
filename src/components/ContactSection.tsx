@@ -26,13 +26,17 @@ export function ContactSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="contact" className="py-24 px-4">
+    <section id="contact" className="relative py-24 px-4 overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-30" />
+      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-gradient-to-bl from-accent/8 to-transparent rounded-full blur-3xl" />
+      <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-gradient-to-tr from-accent-2/8 to-transparent rounded-full blur-3xl" />
+
       <motion.div
         ref={ref}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={stagger}
-        className="max-w-4xl mx-auto"
+        className="relative z-10 max-w-4xl mx-auto"
       >
         <motion.span
           variants={fadeUp}
@@ -56,30 +60,30 @@ export function ContactSection() {
         <div className="grid md:grid-cols-2 gap-10">
           <motion.form
             variants={fadeUp}
-            className="space-y-4"
+            className="glass rounded-xl p-6 space-y-4"
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="grid grid-cols-2 gap-4">
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full px-4 py-2.5 rounded-lg border border-border bg-card text-text text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
+                className="w-full px-4 py-2.5 rounded-lg border border-border bg-surface/50 text-text text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
               />
               <input
                 type="email"
                 placeholder="Your Email"
-                className="w-full px-4 py-2.5 rounded-lg border border-border bg-card text-text text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
+                className="w-full px-4 py-2.5 rounded-lg border border-border bg-surface/50 text-text text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
               />
             </div>
             <input
               type="text"
               placeholder="Subject"
-              className="w-full px-4 py-2.5 rounded-lg border border-border bg-card text-text text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
+              className="w-full px-4 py-2.5 rounded-lg border border-border bg-surface/50 text-text text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
             />
             <textarea
               rows={4}
               placeholder="Your Message"
-              className="w-full px-4 py-2.5 rounded-lg border border-border bg-card text-text text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all resize-none"
+              className="w-full px-4 py-2.5 rounded-lg border border-border bg-surface/50 text-text text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all resize-none"
             />
             <motion.button
               type="submit"
@@ -104,9 +108,9 @@ export function ContactSection() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border bg-card hover:border-accent/30 hover:shadow-sm transition-all group"
+                  className="glass rounded-xl flex items-center gap-3 px-4 py-3 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
                     <Icon className="w-4 h-4 text-accent" />
                   </div>
                   <span className="text-sm font-medium text-text group-hover:text-accent transition-colors">
