@@ -1,17 +1,17 @@
 export const site = {
-  title: "Your Name",
-  tagline: "Frontend Developer & UI Engineer",
+  title: "Chris",
+  tagline: "2nd Year IT Student & Developer",
   description:
-    "I build fast, accessible, and delightful web experiences with modern tools.",
-  url: "https://yourusername.github.io/portfolio",
+    "Building projects across web and desktop — from interactive city guides to JavaFX collaboration tools.",
+  url: "https://your4tune02-bit.github.io/portfolio",
   domain: "portfolio",
 };
 
 export const hero = {
   greeting: "Hi, I'm",
-  name: "Your Name",
-  subtitle: "I craft interfaces that users love.",
-  roles: ["Frontend Developer", "UI/UX Designer", "Creative Technologist"],
+  name: "Chris",
+  subtitle: "2nd year IT student exploring full-stack web and desktop development.",
+  roles: ["IT Student", "Web Developer", "Java Developer"],
   cta: { label: "See My Work", href: "#projects" },
   secondaryCta: { label: "Get In Touch", href: "#contact" },
 };
@@ -20,9 +20,9 @@ export const about = {
   badge: "About",
   title: "Who I Am",
   paragraphs: [
-    "I'm a frontend developer based in [Your City], with a passion for building performant, accessible web applications. I specialize in React, Next.js, and the modern JavaScript ecosystem.",
-    "When I'm not coding, you'll find me [hobby/interests placeholder]. I believe great design is invisible — it just feels right.",
-    "I'm always open to new opportunities and collaborations. Let's build something great together.",
+    "I'm Chris, a 2nd year IT student with a passion for building practical applications that solve real problems. I've worked on web apps with Next.js and desktop apps with JavaFX, always focusing on clean code and good user experience.",
+    "My projects range from an interactive Manila travel guide to a project-collaboration desktop app called SkillSync. I enjoy learning new technologies and turning ideas into working software.",
+    "I'm looking for opportunities to grow as a developer and contribute to meaningful projects. Let's build something cool together!",
   ],
   avatar: "/avatar-placeholder.svg",
   resumeUrl: "#",
@@ -33,31 +33,31 @@ export const skills = {
   title: "Tools & Technologies",
   categories: [
     {
-      name: "Frontend",
+      name: "Web",
       items: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "TypeScript", level: 88 },
-        { name: "Tailwind CSS", level: 92 },
-        { name: "HTML/CSS", level: 95 },
+        { name: "Next.js", level: 75 },
+        { name: "TypeScript", level: 70 },
+        { name: "Tailwind CSS", level: 80 },
+        { name: "HTML/CSS", level: 85 },
+        { name: "Motion", level: 65 },
       ],
     },
     {
-      name: "Design",
+      name: "Desktop",
       items: [
-        { name: "Figma", level: 80 },
-        { name: "UI/UX Design", level: 78 },
-        { name: "Design Systems", level: 82 },
-        { name: "Responsive Design", level: 90 },
+        { name: "Java", level: 80 },
+        { name: "JavaFX", level: 75 },
+        { name: "Maven", level: 70 },
+        { name: "SQLite", level: 65 },
       ],
     },
     {
       name: "Tools",
       items: [
-        { name: "Git", level: 85 },
-        { name: "VS Code", level: 90 },
-        { name: "Docker", level: 65 },
-        { name: "CI/CD", level: 75 },
+        { name: "Git", level: 70 },
+        { name: "VS Code", level: 85 },
+        { name: "IntelliJ IDEA", level: 80 },
+        { name: "Figma", level: 55 },
       ],
     },
   ],
@@ -66,94 +66,70 @@ export const skills = {
 export const projects = {
   badge: "Projects",
   title: "Things I've Built",
-  description: "A selection of projects that showcase my skills and interests.",
+  description: "Projects I've worked on during my IT studies and personal development.",
   list: [
-    {
-      title: "Project Alpha",
-      description:
-        "A full-stack web application built with Next.js and Supabase. Features real-time collaboration, authentication, and a sleek dark-mode UI.",
-      tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
-      image: "/project-placeholder.svg",
-      links: { live: "https://example.com", github: "https://github.com" },
-    },
     {
       title: "Manila City Guide",
       description:
-        "Interactive travel guide with 3D elements, smooth page transitions, and robot mascot. Covers 6 categories of Manila attractions with dark/light theme support.",
-      tags: ["Next.js", "Motion", "Tailwind", "3D"],
+        "Interactive travel guide for Manila with 3D tilt cards, smooth page transitions, an animated robot mascot, and dark/light theme. Covers 6 categories of attractions, food, transport, and culture.",
+      tags: ["Next.js", "TypeScript", "Motion", "Tailwind"],
       image: "/project-placeholder.svg",
-      links: { live: "https://example.com", github: "https://github.com" },
+      links: { live: "https://your4tune02-bit.github.io/portfolio", github: "https://github.com/your4tune02-bit/city-guide" },
     },
     {
-      title: "Dashboard Pro",
+      title: "SkillSync",
       description:
-        "Analytics dashboard with interactive charts, data tables, and export functionality. Built with React and D3.js for data visualization.",
-      tags: ["React", "D3.js", "Node.js", "PostgreSQL"],
+        "JavaFX desktop application for student project collaboration. Features project creation, task boards, real-time chat, invitation system, and skill-based recommendations. Uses SQLite for local data persistence.",
+      tags: ["Java", "JavaFX", "Maven", "SQLite"],
       image: "/project-placeholder.svg",
-      links: { live: "https://example.com", github: "https://github.com" },
+      links: { live: "#", github: "https://github.com/your4tune02-bit/skillsync" },
     },
     {
-      title: "E-Commerce Store",
+      title: "StockFlow",
       description:
-        "Modern e-commerce platform with cart, checkout, and payment integration. Optimized for performance and SEO with a 95+ Lighthouse score.",
-      tags: ["Next.js", "Stripe", "Prisma", "PostgreSQL"],
+        "Inventory and sales management system with daily sales reporting, transaction tracking, and revenue analytics. Generates CSV reports for business insights.",
+      tags: ["Python", "CSV", "Data Analysis", "CLI"],
       image: "/project-placeholder.svg",
-      links: { live: "https://example.com", github: "https://github.com" },
-    },
-    {
-      title: "Weather App",
-      description:
-        "Real-time weather app with 7-day forecasts, interactive maps, and location-based updates. PWA with offline support.",
-      tags: ["React", "PWA", "OpenWeather API", "Mapbox"],
-      image: "/project-placeholder.svg",
-      links: { live: "https://example.com", github: "https://github.com" },
-    },
-    {
-      title: "DevBlog",
-      description:
-        "Personal developer blog with MDX support, syntax highlighting, RSS feed, and a tag-based content system.",
-      tags: ["Next.js", "MDX", "Tailwind", "Vercel"],
-      image: "/project-placeholder.svg",
-      links: { live: "https://example.com", github: "https://github.com" },
+      links: { live: "#", github: "https://github.com/your4tune02-bit/stockflow" },
     },
   ],
 };
 
 export const experience = {
   badge: "Experience",
-  title: "Where I've Worked",
+  title: "My Journey",
   jobs: [
     {
-      role: "Senior Frontend Developer",
-      company: "Tech Company Inc.",
-      period: "Jan 2024 — Present",
+      role: "2nd Year IT Student",
+      company: "University",
+      period: "2025 — Present",
       description:
-        "Leading the frontend team in building a SaaS platform. Migrated legacy codebase to Next.js, improved Lighthouse scores by 40%, and established the component library.",
-      tags: ["Next.js", "TypeScript", "Storybook", "GraphQL"],
+        "Studying Information Technology with a focus on software development. Building projects across web and desktop platforms to strengthen my programming skills.",
+      tags: ["Java", "Web Dev", "Databases", "OOP"],
     },
     {
-      role: "Frontend Developer",
-      company: "Digital Agency Co.",
-      period: "Mar 2022 — Dec 2023",
+      role: "Project: Manila City Guide",
+      company: "Personal Project",
+      period: "2026",
       description:
-        "Built responsive web applications for clients across fintech, healthcare, and e-commerce. Introduced automated testing and code review practices.",
-      tags: ["React", "TypeScript", "Jest", "Cypress"],
+        "Built a multi-page Next.js travel guide with 3D interactions, page transitions, animated SVG robot, and full dark/light theme support. Focused on performance (60fps) and responsive design.",
+      tags: ["Next.js", "Motion", "Tailwind", "TypeScript"],
     },
     {
-      role: "Junior Developer",
-      company: "StartupXYZ",
-      period: "Jun 2021 — Feb 2022",
+      role: "Project: SkillSync",
+      company: "Academic Project",
+      period: "2026",
       description:
-        "Developed and maintained the company's React-based dashboard. Collaborated with design team to implement pixel-perfect UI components.",
-      tags: ["React", "SCSS", "Node.js", "MongoDB"],
+        "Developed a JavaFX desktop application for project collaboration among students. Implemented real-time chat, task management, invitation system, and SQLite persistence layer.",
+      tags: ["Java", "JavaFX", "SQLite", "OOP Design"],
     },
     {
-      role: "Freelance Web Developer",
-      company: "Self-Employed",
-      period: "Jan 2020 — May 2021",
+      role: "Project: StockFlow",
+      company: "Personal Project",
+      period: "2026",
       description:
-        "Designed and built websites for small businesses. Managed client relationships from concept to deployment.",
-      tags: ["HTML/CSS", "JavaScript", "WordPress", "Shopify"],
+        "Created an inventory and sales tracking system with automated CSV reporting and revenue analytics.",
+      tags: ["Python", "Data Processing", "CLI", "CSV"],
     },
   ],
 };
@@ -161,16 +137,15 @@ export const experience = {
 export const contact = {
   badge: "Contact",
   title: "Let's Talk",
-  description: "Have a project in mind or just want to say hi? Drop me a message!",
-  email: "hello@yourname.com",
+  description: "Have a question, project idea, or just want to connect? Reach out!",
+  email: "chris@example.com",
   social: [
-    { name: "GitHub", url: "https://github.com/yourusername", icon: "github" },
-    { name: "LinkedIn", url: "https://linkedin.com/in/yourusername", icon: "linkedin" },
-    { name: "Twitter", url: "https://twitter.com/yourusername", icon: "twitter" },
-    { name: "Email", url: "mailto:hello@yourname.com", icon: "email" },
+    { name: "GitHub", url: "https://github.com/your4tune02-bit", icon: "github" },
+    { name: "LinkedIn", url: "https://linkedin.com/in/chris", icon: "linkedin" },
+    { name: "Email", url: "mailto:chris@example.com", icon: "email" },
   ],
 };
 
 export const footer = {
-  text: `© ${new Date().getFullYear()} Your Name. Built with Next.js & Tailwind CSS.`,
+  text: `© ${new Date().getFullYear()} Chris. Built with Next.js & Tailwind CSS.`,
 };
